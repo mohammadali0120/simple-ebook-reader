@@ -1,0 +1,60 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import './fonts.scss';
+
+body {
+  @apply bg-gray-50 dark:bg-gray-900;
+}
+
+// custom classes
+
+.form-group {
+  @apply w-full rounded-md border-2 border-gray-100 dark:border-gray-800;
+}
+.form-input {
+  @apply w-full p-2 focus:outline-none border-gray-100 bg-white text-black dark:bg-gray-900 dark:text-gray-200;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+
+.direction-rtl {
+  direction: rtl !important;
+}
+.direction-ltr {
+  direction: ltr !important;
+}
+.scrollable {
+  /* width */
+  &::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 8px;
+  }
+  /* Track */
+  &::-webkit-scrollbar-track {
+    // background: #f5efef;
+    @apply bg-gray-50 dark:bg-transparent;
+    border-radius: 8px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    // background: #a1a1a1;
+    @apply bg-gray-400 dark:bg-gray-700;
+    border-radius: 8px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    // background: #858585;
+    @apply bg-gray-500 dark:bg-gray-800;
+  }
+}

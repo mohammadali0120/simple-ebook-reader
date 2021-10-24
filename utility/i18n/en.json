@@ -1,0 +1,22 @@
+{
+  "messages": {
+    "validation": {
+      "min": "{_field_} can not be less than {length} charcter",
+      "max": "{_field_} can not be more than {length} charcter",
+      "required": "{_field_} is required"
+    },
+    "placeholder": {
+      "editorInput": "Please enter Ebook name",
+      "editorTextarea": "Please enter Ebook content"
+    },
+    "buttons": {
+      "headerChangeStyle": "Change styles",
+      "readingMode": "Reading Mode"
+    },
+    "labels": {},
+    "headerItems": [
+      { "value": "Editor", "link": "/en/editor" },
+      { "value": "Ebook", "link": "/en/ebook" }
+    ]
+  }
+}

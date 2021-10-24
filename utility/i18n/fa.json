@@ -1,0 +1,22 @@
+{
+  "messages": {
+    "validation": {
+      "min": "{_field_} باید حداقل {length} کارکتر باشد",
+      "max": "{_field_} باید حداکثر {length} کارکتر باشد",
+      "required": "{_field_} الزامی است"
+    },
+    "placeholder": {
+      "editorInput": "لطفا نام کتاب الکترونیکی را وارد کنید",
+      "editorTextarea": "لطفا متحوای کتاب الکترونیکی را وارد کنید"
+    },
+    "buttons": {
+      "headerChangeStyle": "ویرایش استایل",
+      "readingMode": "حالت خواندن"
+    },
+    "labels": {},
+    "headerItems": [
+      { "value": "ویرایشگر", "link": "/editor" },
+      { "value": "کتاب الکترونیکی", "link": "/ebook" }
+    ]
+  }
+}
