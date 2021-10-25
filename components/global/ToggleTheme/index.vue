@@ -6,7 +6,7 @@
       w-16
       h-7
       rounded-2xl
-      bg-gray-800
+      bg-gray-900
       flex
       items-center
       direction-rtl

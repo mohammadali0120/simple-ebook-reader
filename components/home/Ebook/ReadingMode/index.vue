@@ -5,18 +5,25 @@
       w-full
       py-2
       text-center
-      border-2 border-gray-100
+      border-4 border-gray-100
       dark:border-gray-800
       text-black
       dark:text-white
-      bg-white
-      dark:bg-gray-900
+      bg-transparent
+      dark:bg-black
       rounded-md
     "
   >
-    <button type="button" class="w-full block" @click="readingMode">
-      {{ $t('buttons.readingMode') }}
-    </button>
+    <template v-if="getReadingMode">
+      <button type="button" class="w-full block" @click="disableReadingMode">
+        {{ $t('buttons.disableReadingMode') }}
+      </button>
+    </template>
+    <template v-else>
+      <button type="button" class="w-full block" @click="enableReadingMode">
+        {{ $t('buttons.enableReadingMode') }}
+      </button>
+    </template>
   </div>
 </template>
 
@@ -25,9 +32,22 @@ import { defineComponent } from '@vue/composition-api'
 
 export default defineComponent({
   name: 'HomeEbookReadingMode',
+  data() {
+    return {
+      status: false as boolean,
+    }
+  },
+  computed: {
+    getReadingMode() {
+      return this.$store.getters.getReadingMode
+    },
+  },
   methods: {
-    readingMode() {
-      // 
+    enableReadingMode() {
+      this.$store.dispatch('changeReadingModeStatus', true)
+    },
+    disableReadingMode() {
+      this.$store.dispatch('changeReadingModeStatus', false)
     },
   },
 })

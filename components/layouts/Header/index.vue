@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 dark:bg-gray-800">
+  <div class="bg-gray-100 dark:bg-gray-900">
     <div class="container">
       <div class="relative md:flex md:flex-wrap">
         <ul class="md:flex md:flex-wrap md:justify-center">
@@ -18,21 +18,6 @@
           "
         >
           <ul class="md:flex md:items-center">
-            <client-only>
-              <li
-                v-if="isUserInEbookPage"
-                class="
-                  cursor-pointer
-                  px-3
-                  font-bold
-                  text-yellow-300
-                  dark:text-yellow-500
-                "
-                :title="$t('buttons.headerChangeStyle')"
-              >
-                <fa :icon="['fas', 'palette']" class="" />
-              </li>
-            </client-only>
             <li
               class="px-3 font-bold text-black dark:text-gray-200"
               @click="isLanguagesVisible = !isLanguagesVisible"
@@ -43,7 +28,7 @@
             </li>
           </ul>
           <ul
-            class="md:absolute md:shadow bg-white dark:bg-gray-800 top-12"
+            class="md:absolute md:shadow bg-white dark:bg-gray-900 top-12"
             :class="[
               !isLanguagesVisible ? 'hidden' : 'block',
               getLanguageLocalesData.direction === 'rtl' ? 'left-2' : 'right-2',
@@ -81,7 +66,6 @@ export default defineComponent({
       ] as SelectedLanguage[],
       selectedLanguage: { value: '', link: '' } as SelectedLanguage,
       isLanguagesVisible: false as boolean,
-      isUserInEbookPage: false as boolean,
     }
   },
   computed: {
@@ -89,12 +73,6 @@ export default defineComponent({
       return (this.$i18n.locales as any[]).find(
         (i: any) => i.code === this.$i18n.locale
       )
-    },
-  },
-  watch: {
-    $route: {
-      handler: 'urlStatus',
-      immediate: true,
     },
   },
   mounted() {
@@ -106,17 +84,6 @@ export default defineComponent({
     )
   },
   methods: {
-    urlStatus() {
-      // eslint-disable-next-line prefer-regex-literals
-      const text: RegExp = new RegExp('/ebook')
-      const Url: string = process.browser ? window.location.href : ''
-      const res = text.test(Url)
-      if (res) {
-        this.isUserInEbookPage = true
-      } else {
-        this.isUserInEbookPage = false
-      }
-    },
     changeSelectedLanguage(language: SelectedLanguage): void {
       this.selectedLanguage.value = language.value
       this.selectedLanguage.link = language.link

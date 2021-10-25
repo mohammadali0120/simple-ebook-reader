@@ -28,11 +28,11 @@
           text-black
           dark:text-white
           bg-white
-          dark:bg-gray-900
+          dark:bg-black
           rounded-md
         "
       >
-        <nuxt-link to="" class="block"> Send </nuxt-link>
+        <button class="block w-full">{{ $t('buttons.send') }}</button>
       </div>
     </form>
   </div>
@@ -51,7 +51,13 @@ export default defineComponent({
   },
   methods: {
     sendData(): void {
-      //
+      const x = JSON.stringify({ name: this.name, content: this.content })
+      process.browser ? localStorage.setItem('ebook', x as any) : ''
+      const url: any = this.$route.fullPath
+      const newUrl = url.substring(0, url.lastIndexOf('/'))
+      setTimeout(() => {
+        this.$router.push(newUrl + '/ebook')
+      }, 500)
     },
   },
 })

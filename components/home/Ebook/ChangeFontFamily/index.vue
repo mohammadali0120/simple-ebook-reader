@@ -1,12 +1,14 @@
 <template>
   <div class="relative" tabindex="0" @blur="closeSelectFontFamilyBox">
     <div
-      :class="isOpen ? 'border-b-0 rounded-bl-none rounded-br-none' : ''"
+      :class="isOpen ? 'rounded-bl-none rounded-br-none' : ''"
       class="
         cursor-pointer
         w-full
         rounded-md
-        border-2 border-gray-100
+        bg-transparent
+        dark:bg-black
+        border-4 border-gray-100
         dark:border-gray-800
       "
       @click="isOpen = !isOpen"
@@ -22,15 +24,15 @@
         w-full
         z-10
         bg-gray-50
-        dark:bg-gray-900
+        dark:bg-black
         rounded-md
-        border-2 border-gray-100
+        border-4 border-gray-100
         dark:border-gray-800
         scrollable
         h-28
         overflow-auto
       "
-      :class="isOpen ? 'border-t-0 rounded-tl-none rounded-tr-none' : ''"
+      :class="isOpen ? 'border-t-0 rounded-tl-none rounded-tr-none top-11' : ''"
     >
       <li
         v-for="(item, index) in fonts"
@@ -44,11 +46,11 @@
           duration-300
           dark:text-gray-200
           hover:bg-gray-100
-          dark:hover:bg-gray-800
+          dark:hover:bg-gray-900
         "
         :class="
           item.value === selectedFont.value
-            ? 'bg-gray-100 dark:bg-gray-800'
+            ? 'bg-gray-100 dark:bg-gray-900'
             : ''
         "
         @click="selectFontFamily(item)"

@@ -4,12 +4,12 @@
       type="button"
       class="
         text-center
-        border-2 border-gray-100
+        border-4 border-gray-100
         dark:border-gray-800
         text-black
         dark:text-white
-        bg-white
-        dark:bg-gray-900
+        bg-transparent
+        dark:bg-black
         rounded-md
         py-2
         w-1/3
@@ -23,12 +23,12 @@
       type="button"
       class="
         text-center
-        border-2 border-gray-100
+        border-4 border-gray-100
         dark:border-gray-800
         text-black
         dark:text-white
-        bg-white
-        dark:bg-gray-900
+        bg-transparent
+        dark:bg-black
         rounded-md
         py-2
         w-1/3

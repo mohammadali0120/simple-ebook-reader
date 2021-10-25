@@ -11,7 +11,9 @@
     },
     "buttons": {
       "headerChangeStyle": "ویرایش استایل",
-      "readingMode": "حالت خواندن"
+      "enableReadingMode": "فعال کردن حالت خواندن",
+      "disableReadingMode": "غیرفعال کردن حالت خواندن",
+      "send": "ارسال"
     },
     "labels": {},
     "headerItems": [

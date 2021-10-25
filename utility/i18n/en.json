@@ -11,7 +11,9 @@
     },
     "buttons": {
       "headerChangeStyle": "Change styles",
-      "readingMode": "Reading Mode"
+      "enableReadingMode": "Enable Reading Mode",
+      "disableReadingMode": "Disable Reading Mode",
+      "send":"send"
     },
     "labels": {},
     "headerItems": [
