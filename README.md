@@ -18,6 +18,9 @@ $ npm run generate
 ```
 
 ## Deploy in Heroku
+```bash
 npm install typescript &&  npm run build && heroku create simple-ebook-reader && heroku config:set NPM_CONFIG_PRODUCTION=false && heroku config:set HOST=0.0.0.0 && heroku config:set NODE_ENV=production && git rm package-lock.json && git push heroku main 
+```
+##
 
-#### You can see the Project [here](https://simple-ebook-reader.herokuapp.com/)
+#### You can see the project [here](https://simple-ebook-reader.herokuapp.com/)
