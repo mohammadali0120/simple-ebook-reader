@@ -1,5 +1,12 @@
 # simple-ebook-reader
 
+## Tools
+
+* Vue.js & Nuxt.js
+* Typesciprt
+* TailwindCSS
+* Nuxt I18n
+
 ## Build Setup
 
 ```bash
