@@ -6,6 +6,7 @@
 * Typesciprt
 * TailwindCSS
 * Nuxt I18n
+* PWA
 
 ## Build Setup
 
