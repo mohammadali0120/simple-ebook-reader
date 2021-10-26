@@ -8,6 +8,14 @@
 * Nuxt I18n
 * PWA
 
+## Features
+* Dark mode supported
+* Reading mode supported
+* Multiple languages supported
+* Change font size supported
+* Change font family supported
+* Store ebook name and content on LocalStorage of Browser supported
+
 ## Build Setup
 
 ```bash
