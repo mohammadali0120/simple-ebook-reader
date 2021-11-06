@@ -1,6 +1,13 @@
 <template>
   <div class="bg-gray-100 dark:bg-gray-900">
-    <div class="container">
+    <button
+      class="md:hidden text-black block w-20 dark:text-white"
+      :class="getDirection === 'rtl' ? 'mr-auto' : 'ml-auto'"
+      @click="isMenuVisisble = !isMenuVisisble"
+    >
+      <span class="block transform rotate-90 py-3 text-2xl"> ||| </span>
+    </button>
+    <div :class="{ hidden: !isMenuVisisble }" class="md:block container">
       <div class="relative md:flex md:flex-wrap">
         <ul class="md:flex md:flex-wrap md:justify-center">
           <li
@@ -19,7 +26,7 @@
         >
           <ul class="md:flex md:items-center">
             <li
-              class="px-3 font-bold text-black dark:text-gray-200"
+              class="md:px-3 font-bold text-black dark:text-gray-200"
               @click="isLanguagesVisible = !isLanguagesVisible"
             >
               <nuxt-link :to="switchLocalePath(selectedLanguage.value)">
@@ -66,9 +73,14 @@ export default defineComponent({
       ] as SelectedLanguage[],
       selectedLanguage: { value: '', link: '' } as SelectedLanguage,
       isLanguagesVisible: false as boolean,
+      isMenuVisisble: false,
     }
   },
+
   computed: {
+    getDirection(): string {
+      return this.$store.getters.getDirection
+    },
     getLanguageLocalesData(): any {
       return (this.$i18n.locales as any[]).find(
         (i: any) => i.code === this.$i18n.locale

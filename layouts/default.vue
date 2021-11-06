@@ -4,7 +4,11 @@
     :style="{ direction: getDirection === 'rtl' ? 'rtl' : 'ltr' }"
   >
     <layout-header v-show="!getReadingMode" />
-    <div :class="!getReadingMode ? 'container pt-5 pb-12' : 'p-3'">
+    <div
+      :class="
+        !getReadingMode ? 'container md:px-0 px-3 pt-5 pb-12' : 'px-3 pt-3 pb-8'
+      "
+    >
       <Nuxt />
     </div>
     <div class="fixed bottom-0 left-0">
@@ -26,6 +30,21 @@ export default defineComponent({
     },
     getReadingMode(): boolean {
       return this.$store.getters.getReadingMode
+    },
+  },
+  watch: {
+    $route() {
+      if (
+        this.$route.name !== 'ebook___en' as any ||
+        this.$route.name !== 'ebook___fa' as any
+      ) {
+        this.changeReadingModeStatus()
+      }
+    },
+  },
+  methods: {
+    changeReadingModeStatus() {
+      this.$store.dispatch('changeReadingModeStatus', false)
     },
   },
 })

@@ -9,16 +9,42 @@
       "editorInput": "Please enter Ebook name",
       "editorTextarea": "Please enter Ebook content"
     },
+    "inputs": {
+      "name": "The ebook name",
+      "content": "The ebook content"
+    },
     "buttons": {
       "headerChangeStyle": "Change styles",
       "enableReadingMode": "Enable Reading Mode",
       "disableReadingMode": "Disable Reading Mode",
-      "send":"send"
+      "send": "send"
     },
     "labels": {},
     "headerItems": [
       { "value": "Editor", "link": "/en/editor" },
       { "value": "Ebook", "link": "/en/ebook" }
-    ]
+    ],
+    "indexPageMessages": {
+      "title": "Hello and Welcome",
+      "body": "Here you can add the content of your Ebook and use the features placed below this text",
+      "features": [
+        "Dark Mode supported",
+        "Reading mode supported",
+        "Change text size supported",
+        "Change font type supported",
+        "Compatible with browsers of Mobile, Tablet and Desktop",
+        "Store the name and content of Ebook supported",
+        "Multiple languages supported"
+      ],
+      "hint": {
+        "value": "Get Started",
+        "link": "/en/editor"
+      },
+      "gitHubLink": {
+        "value": "Github Link",
+        "link": "https://github.com/mohammadali0120/simple-ebook-reader/"
+      }
+    },
+    "ebookPageMessage": "There is no content, please enter a content for your Ebook first"
   }
 }
