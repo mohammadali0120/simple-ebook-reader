@@ -3,7 +3,8 @@ import fa from './utility/i18n/fa.json'
 import en from './utility/i18n/en.json'
 
 export default {
-  ssr: true,
+  // ssr: true,
+  target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'simple-ebook-reader',
